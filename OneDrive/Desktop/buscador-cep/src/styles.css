@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  .container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(103, 103, 152) 35%, rgba(0,212,255,1) 100%);
+    position: relative;
+    overflow: hidden; /* Impede que as linhas saiam da tela */
+    z-index: 2; /* Coloca o conteúdo acima das linhas */
+  }
+  
+  .title {
+    font-size: 50px;
+    color: #fff;
+    animation: flipTitle 2s ease-in-out;
+    margin-bottom: 20px; /* Espaço entre o título e o formulário */
+  }
+  
+  @keyframes flipTitle {
+    from {
+      transform: rotateX(90deg);
+    }
+    to {
+      transform: rotateX(0deg);
+    }
+  }
+  
+  .containerInput {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px; /* Define um tamanho máximo para o container */
+  }
+  
+  .containerInput input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px 0 0 8px;
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  .containerInput button {
+    border: none;
+    outline: none;
+    background-color: #007bff; /* Cor de fundo para o botão */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .containerInput button:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse no botão */
+  }
+  
+  .error {
+    color: #ff4d4d;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(157, 197, 243);
+    width: 500px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  .main h2 {
+    margin-bottom: 16px;
+    font-weight: bold;
+  }
+  
+  .main span {
+    margin-bottom: 16px;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      padding: 0 10px;
+    }
+    .containerInput {
+      flex-direction: column;
+    }
+    .containerInput input {
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .containerInput button {
+      border-radius: 8px;
+    }
+  }
+  
+  /* Linhas animadas verticais e horizontais */
+  @keyframes moveVerticalLines {
+    0% {
+      transform: translateY(-100%);
+    }
+    50% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  
+  @keyframes moveHorizontalLines {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Estilos das linhas verticais */
+  .line-vertical {
+    position: absolute;
+    width: 2px; /* Largura fina para as linhas verticais */
+    height: 200%; /* Aumenta a altura para cobrir mais da tela */
+    background: linear-gradient(45deg, rgba(66, 121, 180, 0.3), rgba(100, 77, 73, 0.3));
+    border-radius: 50%;
+    animation: moveVerticalLines 10s infinite;
+    opacity: 0.5;
+    z-index: 1; /* Coloca as linhas atrás do conteúdo */
+    left: -10%; /* Mantém as linhas fora da área da caixa */
+  }
+  
+  .line-vertical:nth-child(2) {
+    left: 110%; /* Coloca as linhas à direita */
+    animation-duration: 12s;
+  }
+  
+  .line-vertical:nth-child(3) {
+    left: 25%; /* Linha intermediária */
+    animation-duration: 14s;
+  }
+  
+  .line-vertical:nth-child(4) {
+    left: 75%;
+    animation-duration: 10s;
+  }
+  
+  /* Estilos das linhas horizontais */
+  .line-horizontal {
+    position: absolute;
+    height: 2px; /* Largura fina para as linhas horizontais */
+    width: 200%; /* Aumenta a largura para cobrir mais da tela */
+    background: linear-gradient(45deg, rgba(0, 122, 255, 0.3), rgba(255, 99, 71, 0.3));
+    border-radius: 50%;
+    animation: moveHorizontalLines 12s infinite;
+    opacity: 0.5;
+    z-index: 1; /* Coloca as linhas atrás do conteúdo */
+    top: -10%; /* Coloca a linha fora da área da caixa */
+  }
+  
+  .line-horizontal:nth-child(6) {
+    top: 110%; /* Linha abaixo da tela */
+    animation-duration: 12s;
+  }
+  
+  .line-horizontal:nth-child(7) {
+    top: 25%;
+    animation-duration: 10s;
+  }
+  
+  .line-horizontal:nth-child(8) {
+    top: 50%;
+    animation-duration: 14s;
+  }
+  
+  .line-horizontal:nth-child(9) {
+    top: 75%;
+    animation-duration: 16s;
+  }
+  
