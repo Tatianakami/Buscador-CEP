@@ -34,7 +34,7 @@ Exibição de Dados: Mostra o logradouro, bairro, cidade e estado relacionados a
 Contato
 Tatiana Kami
 GitHub: https://github.com/Tatianakami
-linkedin.com/in/tatiana-k-lima
+https://linkedin.com/in/tatiana-k-lima
 
 
 
